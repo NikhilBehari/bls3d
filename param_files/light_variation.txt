@@ -1,0 +1,15 @@
+--eval
+--iterations 5000
+--cull_over 120
+--cull_every 30
+--transi_only_until 2000
+--transi_weight 0.1
+--densify_grad_threshold 0.0001
+--intersperse_rgb 3
+--cull_over_transi_only 3
+--prune_replace 1
+--only_use None
+--sigmoid_steepness 10000
+--snr_scale_a -0.0495
+--snr_scale_b 0.1
+--sigmoid_offset 0.001

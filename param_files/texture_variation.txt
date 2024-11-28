@@ -1,0 +1,11 @@
+--eval
+--iterations 5000
+--cull_over 50
+--cull_every 20
+--transi_only_until 1000
+--transi_weight 0.025
+--densify_grad_threshold 0.0001
+--intersperse_rgb 3
+--cull_over_transi_only 3
+--prune_replace 1
+--only_use None
