@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://nikhilbehari.github.io/bls3d-web/"><b>Project page</b></a>
+  <a href="https://nikhilbehari.github.io/bls3d/"><b>Project page</b></a>
   &nbsp;·&nbsp;
   <a href="https://arxiv.org/abs/2411.19474"><b>Paper</b></a>
 </p>
