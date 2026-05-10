@@ -47,7 +47,7 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
 
     background = torch.tensor([1, 1, 1] if dataset.white_background else [0, 0, 0], dtype=torch.float32, device="cuda")
 
-    calibration_histogram = np.load('./sampling/flat_wall.npy')
+    calibration_histogram = np.load(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'sampling', 'flat_wall.npy'))
     pulse = np.mean(calibration_histogram[:, 0, :], axis=0)
     pulse = torch.tensor(pulse, dtype=torch.float32, device="cuda")
     pulse /= pulse.sum()
@@ -120,8 +120,8 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
         gt_image_fullsize = viewpoint_cam_fullsize.get_gtImage(background, use_mask)
         _, gt_im_H, gt_im_W = gt_image.shape
         gt_transi = viewpoint_cam.get_gtTransi() if viewpoint_cam.get_gtTransi() is not None else None
-        if gt_transi is None: 
-            breakpoint() 
+        if gt_transi is None:
+            raise RuntimeError(f"transient ground-truth missing for view {viewpoint_cam.image_name}")
         mask_vis = (opac.detach() > 1e-5)
         mask_vis_fullsize = (opac_fullsize.detach() > 1e-5)
         normal = torch.nn.functional.normalize(normal, dim=0) * mask_vis
@@ -294,12 +294,14 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
 
 
             if iteration > 1 and (iteration - 1) % opt.train_viz_update == 0: #4999 == 0:
-                print("Saving to test folder")
+                viz_dir = os.path.join(scene.model_path, "train_viz")
+                os.makedirs(viz_dir, exist_ok=True)
+                print(f"Saving training preview to {viz_dir}/train.png")
 
                 normal_wrt = normal2rgb(normal, mask_vis)
                 depth_wrt = depth2rgb(depth, mask_vis)
                 img_wrt = torch.cat([gt_image, image, normal_wrt * opac, depth_wrt * opac], 2)
-                save_image(img_wrt.cpu(), 'test/train.png') 
+                save_image(img_wrt.cpu(), os.path.join(viz_dir, "train.png"))
             
             if iteration < opt.iterations:
                 gaussians.optimizer.step()
@@ -310,12 +312,13 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
                 torch.save((gaussians.capture(), iteration), scene.model_path + "/chkpnt" + str(iteration) + ".pth")
 
 
-def prepare_output_and_logger(args):       
+def prepare_output_and_logger(args):
     data_str = args.source_path.split('/')[-1]
     time_str = dt.now().strftime('day%m%d_time%H%M')
     if not args.model_path:
         args.model_path = os.path.join("./output", f"{data_str}_{time_str}")
-    else: 
+    elif not (os.path.isabs(args.model_path)
+              or args.model_path.startswith(("output/", "./output/", "../"))):
         args.model_path = os.path.join("./output", args.model_path)
         
         

@@ -135,7 +135,9 @@ class Scene:
         import numpy as np
         ms = pymeshlab.MeshSet()
         ms.add_mesh(pymeshlab.Mesh(vertex_matrix=np.array(points)))
-        ms.save_current_mesh('test/cameras.ply')
+        out_path = os.path.join(self.model_path, "cameras.ply")
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        ms.save_current_mesh(out_path)
         
     def pass_pose(self, s0, s1):
         c0 = self.getTrainCameras(s0)

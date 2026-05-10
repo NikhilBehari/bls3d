@@ -266,7 +266,7 @@ def readCamerasFromTransforms(path, transformsfile, white_background, extension=
             mask = norm_data[..., 3:]
 
             arr = norm_data[:,:,:3] #* mask + bg * (1 - mask)
-            image = Image.fromarray(np.array(arr*255.0, dtype=np.byte), "RGB")
+            image = Image.fromarray(np.array(arr*255.0, dtype=np.uint8), "RGB")
 
             fovy = focal2fov(fov2focal(fovx, image.size[0]), image.size[1])
             FovY = fovy 
@@ -453,7 +453,7 @@ def readIDRCameras(path):
             alpha = image[..., 3:] / 255
             object_masks[i] *= alpha.transpose([2, 0, 1])
             image = image[..., :3]
-        image = Image.fromarray(np.array(image, dtype=np.byte), "RGB")
+        image = Image.fromarray(np.array(image, dtype=np.uint8), "RGB")
         prcppoint = K[:2, 2] / image.size[:2]
         # print(K[:2, 2], image.size[:2])
         # exit()
@@ -520,8 +520,3 @@ sceneLoadTypeCallbacks = {
 }
 
 
-if __name__ == '__main__':
-    None
-    # path = '/home/pinxuan/Desktop/point/data/dtu/scan122'
-    # cam = readDTUSceneInfo(path)
-    # cam = [decompose_colmap_pose(i) for i in cam]

@@ -54,12 +54,6 @@ def render_set(model_path, use_mask, name, iteration, views, gaussians, pipeline
             render_pkg["viewspace_points"], render_pkg["visibility_filter"], render_pkg["radii"]
         
 
-        # depth_histogram = batch_histogram(depth_buffer, opac_buffer, 0, 6.0, 128)
-        # For debugging
-        # savemat('histogram_example_low_temp.mat',{'depth_buffer':depth_buffer.cpu().numpy(), 'depth':depth.cpu().numpy(),'depth_histogram':depth_histogram.cpu().numpy(), 'opac_buffer':opac_buffer.cpu().numpy(), 'opac':opac.cpu().numpy()})
-        # breakpoint()
-        # import pdb;pdb.set_trace()
-
         mask_gt = view.get_gtMask(use_mask)
         gt_image = view.get_gtImage(background, use_mask).cuda()
         psnr_all.append(psnr((gt_image).to(torch.float64), (image).to(torch.float64)).mean().cpu().numpy())

@@ -23,53 +23,44 @@ In this work, we propose using an alternative class of "blurred" LiDAR that emit
 
 ## 🌳 Environment Setup
 
-### Clone the Repository
 ```bash
 git clone https://github.com/NikhilBehari/bls3d.git
 cd bls3d
-```
-
-### Create the Conda Environment
-```bash
-conda env create --file bls3d_env.yml
+bash setup_env.sh
 conda activate bls3d
 ```
 
-### Compile and Install our CUDA Rasterizer
-Our modified CUDA rasterizer enables gradient-based optimization using transient loss functions. To recompile and install it:
-```bash
-cd submodules/diff-gaussian-rasterization
-python setup.py install && pip install .
-```
+`setup_env.sh` builds a fresh `bls3d` conda env with Python 3.10, PyTorch 2.1
+on CUDA 11.8, gcc-11, our modified CUDA rasterizer, simple-knn, and pytorch3d.
+A NVIDIA GPU with the proprietary driver is required.
 
 ---
 <br />
 
 ## 🏃 Training
 
-### Train a Model
-To train on a dataset, use the `train.py` script:
 ```bash
-python train.py -s ./datasets/folder $(cat param_files/params.txt)
+python train.py -s path/to/dataset -m my_model $(cat param_files/texture_variation.txt)
 ```
 
-Sample parameter files for our texture and lighting variation experiments are provided in the `param_files` directory:
-- `light_variation.txt`
-- `texture_variation.txt`
+Outputs are written to `output/<my_model>/`. Two sample parameter files are
+provided in [`param_files/`](param_files/):
 
-These parameter files can be modified to fine-tune training for specific datasets.
+- [`texture_variation.txt`](param_files/texture_variation.txt)
+- [`light_variation.txt`](param_files/light_variation.txt)
 
 ---
-
 <br />
 
 ## 🎨 Rendering
 
-### Generate Images and Reconstruct Mesh
-Once training is complete, the trained model will be saved in the `output/` directory. Use the `render.py` script to render images and reconstruct meshes:
 ```bash
-python render.py -m path/to/your/trained/model --img --depth 10
+python render.py -m output/my_model --img --depth 10
 ```
+
+Renders the test views, computes PSNR, and (when `--skip_train` is omitted)
+runs a Poisson surface reconstruction at the given depth. Outputs are written
+to `output/my_model/test/ours_<iter>/` and `output/my_model/poisson_mesh_<depth>.ply`.
 
 ---
 

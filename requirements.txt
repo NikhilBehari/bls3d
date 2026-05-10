@@ -1,0 +1,17 @@
+numpy<2
+setuptools<70
+opencv-python==4.10.0.84
+imageio
+matplotlib
+numba
+OpenEXR
+open3d
+plyfile
+POT
+pymeshlab
+scikit-image
+scipy
+tensorboard
+timm
+tqdm
+trimesh
