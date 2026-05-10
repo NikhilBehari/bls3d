@@ -1,143 +1,129 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-
 <html>
-
-
-<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
 <head>
-	<title>Blurred LiDAR for Sharper 3D</title>
+<title>Blurred LiDAR for Sharper 3D</title>
+    <meta property="og:title" content="Blurred LiDAR for Sharper 3D">
     <meta property="og:description" content="Blurred LiDAR for Sharper 3D">
-	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:creator" content="@mmalex">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Blurred LiDAR for Sharper 3D">
     <meta name="twitter:description" content="Blurred LiDAR for Sharper 3D">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
 <div class="container">
     <div class="paper-title">
         <h1><span style="font-weight: bold; filter: blur(1.5px);">Blurred</span> LiDAR for Sharper 3D</h1>
-        <h2 style="margin-top: -10px; margin-bottom: 4px">Robust Handheld 3D Scanning with Diffuse LiDAR and RGB</h2>
-        <h3 class="venue">CVPR 2025 (Highlight)</h3>
+        <h2 style="margin-top: -16px; margin-bottom: 10px">Robust Handheld 3D Scanning with Diffuse LiDAR and RGB</h2>
+        <div style="display: flex; justify-content: center; margin-top: 5px;">
+            <div style="background-color: #5F688E; color: white; padding: 3px 10px; font-size: 13px; border-radius: 5px; text-align: center; font-weight: 400;">CVPR 2025 (Highlight)</div>
+        </div>
     </div>
-    
+
     <div id="authors">
         <div class="author-row">
-            <div class="col-6 text-center"><a href="https://nikhilbehari.github.io" target="_blank">Nikhil<br> Behari</a></div>
-            <div class="col-6 text-center"><a href="https://aaronyoung5.github.io" target="_blank">Aaron<br> Young</a></div>
-            <div class="col-6 text-center"><a href="https://sidsoma.github.io" target="_blank">Siddharth<br> Somasundaram</a></div>
-            <div class="col-6 text-center"><a href="https://tzofi.github.io" target="_blank">Tzofi<br> Klinghoffer</a></div>
-            <div class="col-6 text-center"><a href="https://akshatdave.github.io" target="_blank">Akshat<br> Dave</a></div>
-            <div class="col-6 text-center"><a href="https://www.media.mit.edu/people/raskar/overview/" target="_blank">Ramesh<br> Raskar</a></div>
+            <div class="col-6 text-center"><a href="https://nikhilbehari.github.io" target="_blank">Nikhil<br>Behari</a></div>
+            <div class="col-6 text-center"><a href="https://aaronyoung5.github.io" target="_blank">Aaron<br>Young</a></div>
+            <div class="col-6 text-center"><a href="https://sidsoma.github.io" target="_blank">Siddharth<br>Somasundaram</a></div>
+            <div class="col-6 text-center"><a href="https://tzofi.github.io" target="_blank">Tzofi<br>Klinghoffer</a></div>
+            <div class="col-6 text-center"><a href="https://akshatdave.github.io" target="_blank">Akshat<br>Dave</a></div>
+            <div class="col-6 text-center"><a href="https://www.media.mit.edu/people/raskar/overview/" target="_blank">Ramesh<br>Raskar</a></div>
         </div>
-        <div class="affil-row">
-            <div class="col-1 text-center">Massachusetts Institute of Technology</div>
+        <div class="affil-row" style="margin: 16px auto 0; text-align: center;">
+            <span style="display: inline-block; margin: 0 14px;">Massachusetts Institute of Technology</span>
         </div>
     </div>
-    
+
     <div style="clear: both">
         <div class="paper-btn-parent">
-            <a class="paper-btn" href="https://arxiv.org/abs/2411.19474">Paper</a>
+            <a class="paper-btn" href="https://arxiv.org/abs/2411.19474" target="_blank">Paper</a>
             <a class="paper-btn" href="https://github.com/NikhilBehari/bls3d" target="_blank">Code</a>
             <a class="paper-btn" href="https://drive.google.com/drive/folders/1SovYX8B8pm9hjGmgmNIze04-bpMrajZs?usp=share_link" target="_blank">Datasets</a>
         </div>
     </div>
-    
-    <!-- <section id="teaser">
-            <figure style="width: 100%;">
-                <a href="assets/overview.png">
-                    <img width="70%" src="assets/overview.png" class="center">
-                </a>
-                <p class="caption" style="margin-bottom: 1px;  text-align: justify">
-                </p>
-            </figure>
-    </section> -->
-    
-    <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin: 0 auto;">
+
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin: 24px auto;">
         <iframe src="https://drive.google.com/file/d/130w0TyBZqT8X_viOH13GAMsmpNCYcRDu/preview" style="width: 100%; max-width: 1000px; height: 400px; border: none; border-radius: 10px;" allow="autoplay"></iframe>
     </div>
-    
-	<section id="abstract"/>
-		<h2>Abstract</h2>
-		<hr>
-		<p>
-            3D surface reconstruction is essential across applications of virtual reality, robotics, and mobile scanning. However, RGB-based reconstruction often fails in low-texture, low-light, and low-albedo scenes. Handheld LiDARs, now common on mobile devices, aim to address these challenges by capturing depth information from time-of-flight measurements of a coarse grid of projected dots. Yet, these sparse LiDARs struggle with scene coverage on limited input views, leaving large gaps in depth information. In this work, we propose using an alternative class of "blurred" LiDAR that emits a diffuse flash, greatly improving scene coverage but introducing spatial ambiguity from mixed time-of-flight measurements across a wide field of view. To handle these ambiguities, we propose leveraging the complementary strengths of diffuse LiDAR with RGB. We introduce a Gaussian surfel-based rendering framework with a scene-adaptive loss function that dynamically balances RGB and diffuse LiDAR signals. We demonstrate that, surprisingly, diffuse LiDAR can outperform traditional sparse LiDAR, enabling robust 3D scanning with accurate color and geometry estimation in challenging environments.		</p>
-	</section>
 
+    <section id="abstract">
+        <h2>Abstract</h2>
+        <hr>
+        <p>
+            3D surface reconstruction is essential across applications of virtual reality, robotics, and mobile scanning. However, RGB-based reconstruction often fails in low-texture, low-light, and low-albedo scenes. Handheld LiDARs, now common on mobile devices, aim to address these challenges by capturing depth information from time-of-flight measurements of a coarse grid of projected dots. Yet, these sparse LiDARs struggle with scene coverage on limited input views, leaving large gaps in depth information. In this work, we propose using an alternative class of <span class="bls3d">"blurred" LiDAR</span> that emits a diffuse flash, greatly improving scene coverage but introducing spatial ambiguity from mixed time-of-flight measurements across a wide field of view. To handle these ambiguities, we propose leveraging the complementary strengths of diffuse LiDAR with RGB. We introduce a Gaussian surfel-based rendering framework with a <span class="bls3d">scene-adaptive loss function</span> that dynamically balances RGB and diffuse LiDAR signals. We demonstrate that, surprisingly, diffuse LiDAR can outperform traditional sparse LiDAR, enabling robust 3D scanning with accurate color and geometry estimation in challenging environments.
+        </p>
+    </section>
 
-	<section id="method"/>
-		<h2>Method</h2>
-		<hr>
-    
+    <section id="method">
+        <h2>Method</h2>
+        <hr>
         <figure style="width: 100%;">
             <a href="img/insight.png">
-                <img width="100%" src="img/insight.png">
+                <img width="100%" src="img/insight.png" alt="Sparse vs diffuse LiDAR insight">
             </a>
-            <p  class="caption" style="margin-bottom: 1px;  text-align: justify">
-            (a) Sparse (conventional) LiDAR vs Diffuse LiDAR. Sparse LiDAR projects a grid of points which enable precise timing returns corresponding to individual depths; alternatively, diffuse LiDAR projects a diffuse flash illumination and measures the returns over a wide per-pixel instantaneous field-of-view (IFOV), increasing spatial coverage but also ambiguity in inferred depth. (b) Diffuse LiDAR and RGB have complementary strengths; RGB provides dense spatial and color information, while diffuse LiDAR provides coarse, metric depth even under challenging scenarios.            </p>
+            <p class="caption_justify">
+                (a) Sparse (conventional) LiDAR vs Diffuse LiDAR. Sparse LiDAR projects a grid of points which enable precise timing returns corresponding to individual depths; alternatively, diffuse LiDAR projects a diffuse flash illumination and measures the returns over a wide per-pixel instantaneous field-of-view (IFOV), increasing spatial coverage but also ambiguity in inferred depth. (b) Diffuse LiDAR and RGB have complementary strengths; RGB provides dense spatial and color information, while diffuse LiDAR provides coarse, metric depth even under challenging scenarios.
+            </p>
         </figure>
 
         <figure style="width: 100%;">
             <a href="img/method.png">
-                <img width="100%" src="img/method.png">
+                <img width="100%" src="img/method.png" alt="Method overview">
             </a>
-            <p  class="caption" style="margin-bottom: 1px;  text-align: justify">
-            We consider a compact hardware setting with co-located RGB camera and diffuse LiDAR. At each view, we capture an (a) RGB image and coarse (8 × 8) histograms, for which each pixel contains mixed signal from a wide IFOV ω. We perform (b) analysis-by-synthesis reconstruction using Gaussian surfels, sampling rays within each pixel IFOV and rendering transients with alpha-weighted differentiable binning. Loss signal from RGB and transient inputs are balanced dynamically with a scene-adaptive loss producing (c) high-fidelity RGB and depth/normals for accurate mesh reconstruction.
+            <p class="caption_justify">
+                We consider a compact hardware setting with co-located RGB camera and diffuse LiDAR. At each view, we capture an (a) RGB image and coarse (8 × 8) histograms, for which each pixel contains mixed signal from a wide IFOV ω. We perform (b) analysis-by-synthesis reconstruction using Gaussian surfels, sampling rays within each pixel IFOV and rendering transients with alpha-weighted differentiable binning. Loss signal from RGB and transient inputs are balanced dynamically with a scene-adaptive loss producing (c) high-fidelity RGB and depth/normals for accurate mesh reconstruction.
+            </p>
+        </figure>
+    </section>
+
+    <section id="results">
+        <h2>Results</h2>
+        <hr>
+
+        <figure style="width: 100%;">
+            <a href="img/analysis.png">
+                <center>
+                    <img width="80%" src="img/analysis.png" alt="Recoverability analysis">
+                </center>
+            </a>
+            <p class="caption_justify">
+                We observe improved recoverability with diffuse LiDAR when input views are limited. Full rank is 900 in our analysis simulation. Diffuse LiDAR has greater voxel coverage than conventional sparse LiDAR; this greater coverage can improve rank, and thereby recoverability, when using a limited number of input views. We consider this specific limited-view domain in this work. As the number of input views increases, sparse LiDAR can eventually provide sufficient coverage for scene recoverability.
             </p>
         </figure>
 
-	</section>
-
-    <section id="method"/>
-    <h2>Results</h2>
-    <hr>
-
-    <figure style="width: 100%;">
-        <a href="img/analysis.png">
-            <center>
-            <img width="80%" src="img/analysis.png">
-            </center>
-        </a>
-        <p  class="caption" style="margin-bottom: 1px;  text-align: justify">
-        We observe improved recoverability with diffuse LiDAR when input views are limited. Full rank is 900 in our analysis simulation. Diffuse LiDAR has greater voxel coverage than conventional sparse LiDAR; this greater coverage can improve rank, and thereby recoverability, when using a limited number of input views. We consider this specific limited-view domain in this work. As the number of input views increases, sparse LiDAR can eventually provide sufficient coverage for scene recoverability.
-        </p>
-    </figure>
-
-
-    <figure style="width: 100%;">
-        <a href="img/synth_results.png">
-            <img width="100%" src="img/synth_results.png">
-        </a>
-        <p  class="caption" style="margin-bottom: 1px;  text-align: justify">
-        We enable (a) accurate RGB novel-view synthesis on full-texture scenes, where RGB may be prioritized by our adaptive loss. When (b) textured objects are on textureless planes, we enable greater object-plane separation and peripheral region robustness; on textureless objects, we (c) enhance geometry estimation within the object convex hull visible from RGB. We also (d) improve over sparse LiDAR in scenes without RGB signal, where our adaptive loss may weight diffuse LiDAR more heavily. We enable (e) accurate color-mesh estimation across a wide range of texture and object variations.
-        </p>
-    </figure>
-
-    <div style="display: flex; justify-content: space-between; width: 100%; gap: 16px;">
-        <figure style="width: 59.3%; text-align: center;">
-            <a href="img/lowlighting.png">
-                <img style="width: 100%;" src="img/lowlighting.png" >
+        <figure style="width: 100%;">
+            <a href="img/synth_results.png">
+                <img width="100%" src="img/synth_results.png" alt="Synthetic results">
             </a>
-            <p class="caption" style="margin-top: 10px; text-align: justify;">
-            We simulate low lighting with added Gaussian noise; our scene-adaptive loss weighting can be used to to rely on diffuse LiDAR inputs more heavily as RGB input SNR increases, enabling robust depth estimation across a wide scale of low lighting noise.            
+            <p class="caption_justify">
+                We enable (a) accurate RGB novel-view synthesis on full-texture scenes, where RGB may be prioritized by our adaptive loss. When (b) textured objects are on textureless planes, we enable greater object-plane separation and peripheral region robustness; on textureless objects, we (c) enhance geometry estimation within the object convex hull visible from RGB. We also (d) improve over sparse LiDAR in scenes without RGB signal, where our adaptive loss may weight diffuse LiDAR more heavily. We enable (e) accurate color-mesh estimation across a wide range of texture and object variations.
             </p>
         </figure>
-        <figure style="width: 40.7%; text-align: center;">
-            <a href="img/real_results.png">
-                <img style="width: 100%;" src="img/real_results.png">
-            </a>
-            <p class="caption" style="margin-top: 10px; text-align: justify;">
-            We improve mesh reconstruction in challenging real-world scenes on few (90) inputs. RGB with sparse LiDAR fails to separate object and plane due to low albedo and poor spatial coverage.
-            </p>
-        </figure>
-    </div>
 
-
-</section>
+        <div style="display: flex; justify-content: space-between; width: 100%; gap: 16px;">
+            <figure style="width: 59.3%; text-align: center;">
+                <a href="img/lowlighting.png">
+                    <img style="width: 100%;" src="img/lowlighting.png" alt="Low-lighting robustness">
+                </a>
+                <p class="caption_justify" style="margin-top: 10px;">
+                    We simulate low lighting with added Gaussian noise; our scene-adaptive loss weighting can be used to rely on diffuse LiDAR inputs more heavily as RGB input SNR decreases, enabling robust depth estimation across a wide scale of low lighting noise.
+                </p>
+            </figure>
+            <figure style="width: 40.7%; text-align: center;">
+                <a href="img/real_results.png">
+                    <img style="width: 100%;" src="img/real_results.png" alt="Real-world reconstruction">
+                </a>
+                <p class="caption_justify" style="margin-top: 10px;">
+                    We improve mesh reconstruction in challenging real-world scenes on few (90) inputs. RGB with sparse LiDAR fails to separate object and plane due to low albedo and poor spatial coverage.
+                </p>
+            </figure>
+        </div>
+    </section>
 
     <section id="bibtex">
         <h2>Citation</h2>
@@ -151,6 +137,5 @@
     </section>
 
 </div>
-
 </body>
 </html>
